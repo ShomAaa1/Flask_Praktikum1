@@ -64,38 +64,34 @@ ul {
     line-height: 1.6;
 }
 
-/* .contact-form {
-    display: inline-block;
-    text-align: left;
-    margin-top: 20px;
-    font-size: 18px;
-} */
-
 .contact-form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
+    flex-direction: column;  /* вертикальный стек */
+    align-items: stretch;    /* растягиваем дочерние элементы на всю ширину контейнера */
     padding: 30px;
+    width: 100%;
     max-width: 400px;
-    background-color: #ffffff;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
+    text-align: left;        /* лейблы слева */
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 300px;
-    padding: 8px;
-    margin-bottom: 15px;
+    display: block;          /* обязательно, чтобы flex корректно растягивал */
+    width: 100%;             /* растягиваем на всю ширину контейнера */
+    box-sizing: border-box;  /* учитываем padding и border в ширине */
+    padding: 10px 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: inherit;
+}
+
+.contact-form label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
 }
 
 .contact-form button {
@@ -123,4 +119,32 @@ ul {
 
 .messages success {
     color: #28a745;
+}
+
+.contact-info {
+    flex: 1 1 350px;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2, .contact-info h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }

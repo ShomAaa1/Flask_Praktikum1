@@ -17,5 +17,13 @@
             <li>Создание учебных проектов</li>
             <li>Понимание архитектуры веб-приложений</li>
         </ul>
+        <h2>Наша команда</h2>
+        <p>Мы - команда разработчиков, работающая над проектом Flask Практикум.</p>
+
+        <ul class="team-list">
+            {% for member in team_members %}
+            <li><strong>{{ member.name }}</strong> - {{ member.role }}</li>
+            {% endfor %}
+        </ul>
     </section>
 {% endblock %}
